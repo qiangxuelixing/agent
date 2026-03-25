@@ -1,0 +1,679 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>文档切分 - Agent</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Agent" class="md-header__button md-logo" aria-label="Agent" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              文档切分
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Rag
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Agent" class="md-nav__button md-logo" aria-label="Agent" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agent
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rag
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rag
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档切分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">1. 为何分块</h1>
+<p>分块的必要性源自两个核心限制：
+|限制|说明|
+| :--- | :--- |
+|模型上下文窗口|LLM无法一次性处理无限长度的文本，必须将长文档切分为适配模型处理能力的小文档|
+|检索信噪比|若一个文本块包含过多无关信息（噪声），会稀释核心信号，导致检索器难以精确匹配用户意图|</p>
+<h1 id="2">2. 分块策略</h1>
+<h2 id="21">2.1 基础分块策略</h2>
+<h3 id="211">2.1.1 固定长度分块</h3>
+<ul>
+<li>核心思想：按固定字符数切割文本，不考虑语义结构</li>
+<li>优点：实现简单</li>
+<li>缺点：容易破坏句子完整性</li>
+<li>适用场景：非结构化纯文本预处理，有chunk_size和chunk_overlap两个值</li>
+</ul>
+<h3 id="212">2.1.2 递归字符分块（推荐，稳妥）</h3>
+<ul>
+<li>核心思想：按优先级分隔符递归切分（\n\n -&gt; \n -&gt; 空格 -&gt; ""），尽量保留段落、句子完整性。</li>
+<li>适用场景：绝大多数通用文本的首选策略</li>
+</ul>
+<h3 id="213">2.1.3 基于句子分块</h3>
+<ul>
+<li>核心思想：以完整句子为单位进行组合，确保语义完整，英文文档一般是.?  中文文档建议通过正则表达式识别。！？进行切分，或使用spaCy、HanLP等支持中文的NLP工具</li>
+<li>适用场景：法律文书、新闻报道、对句子完整性要求高的领域</li>
+</ul>
+<h2 id="22">2.2 结构感知分块</h2>
+<p>利用文档的固有结构（标题、列表、对话轮次）作为分块边界，逻辑更强，上下文更完整</p>
+<h3 id="221">2.2.1 结构化文本分块</h3>
+<p>根据文档结构进行切分，如md文档 一个#是一级标题 ##是二级标题
+- 核心思想：根据标题层级（如 <code>#</code>， <code>##</code>）或HTML标签切分
+- 适用场景：技术文档、博客、手册等格式规范的文档</p>
+<h3 id="222">2.2.2 对话式分块</h3>
+<ul>
+<li>核心思想：按发言人或对话轮次切分</li>
+<li>适用场景：客服记录、访谈、会议纪要</li>
+</ul>
+<pre><code class="language-示例">&quot;客户：这个商品多收50元&quot;,
+&quot;客服：您说的是0523这个单吗&quot;,
+&quot;客户：是的&quot;,
+&quot;客服：好的，你稍等我核实一下&quot;
+</code></pre>
+<p>⚠️可扩展：加入发言人数统计、情感变化检测等作为切分依据</p>
+<h2 id="23">2.3 语义与主题分块</h2>
+<p>超越物理结构，基于内容语义或主题变化进行切分</p>
+<h3 id="231">2.3.1 语义分块</h3>
+<ul>
+<li>核心思想：计算相邻句子的向量相似度，在语义突变处切分</li>
+<li>适用场景：知识库、论文、多话题文档</li>
+</ul>
+<p>⚠️ 注意向量相似阈值，过大可能导致很难匹配相似，文档分块过多，过小可能导致相似度过高，文档分块少且块比较大</p>
+<h3 id="232">2.3.2 基于主题的分块</h3>
+<ul>
+<li>核心思想：是用LDA主题模型识别段落主题，在主题切换时切分</li>
+<li>适用场景：长篇报告、书籍章节<blockquote>
+<p>⚠️ 注意事项
+- 主题模型对短文本标果差
+- 预处理影响大（去停用词、词干还原）
+- <code>n_topics</code> 难以预估，需反复实验</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="24">2.4 高级分块策略</h2>
+<h3 id="241-">2.4.1 小-大分块</h3>
+<ul>
+<li>核心思想：</li>
+<li>小块用于检索（高精度）</li>
+<li>大块用于生成（丰富上下文）</li>
+<li>适用场景：复杂问答系统，需兼顾检索准确性与生成完整性</li>
+</ul>
+<h3 id="242">2.4.2 代理分块</h3>
+<ul>
+<li>核心思想：用LLM模拟人类阅读，动态识别知识单元</li>
+<li>适用场景：实验性项目、高度非结构化文本</li>
+</ul>
+<h1 id="3">3. 混合分块</h1>
+<h2 id="_1">核心思想</h2>
+<p>先用宏观策略（如结构化分块）粗切，在对过大的块使用精细策略（如递归或语义分块）细切。</p>
+<h2 id="_2">适用场景</h2>
+<p>结构复杂、内容密度不均的文档（如技术白皮书、企业年报）</p>
+<h1 id="4">4. 如何选择分块策略</h1>
+<h2 id="_3">分层决策框架</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步骤</th>
+<th style="text-align: left;">策略</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">第一步：基准策略</td>
+<td style="text-align: left;">RecurslveCharacterTextSplitter</td>
+<td style="text-align: left;">通用性强，效果稳定，适合建立性能基线</td>
+</tr>
+<tr>
+<td style="text-align: left;">第二步：结构优化</td>
+<td style="text-align: left;">MarkdownHeaderTextSplitter等</td>
+<td style="text-align: left;">若文档有结构，有限使用结构化分块</td>
+</tr>
+<tr>
+<td style="text-align: left;">第三步：精度瓶颈</td>
+<td style="text-align: left;">SemarticChunker或ParentDocumentRetriever</td>
+<td style="text-align: left;">检索不准或生成不完整时引入语义/小大分块</td>
+</tr>
+<tr>
+<td style="text-align: left;">第四步：极端复杂</td>
+<td style="text-align: left;">混合分块</td>
+<td style="text-align: left;">多格式、长文本、高密度场景的终极方案</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">分块策略对比表</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">策略</th>
+<th style="text-align: left;">语义完整性</th>
+<th style="text-align: left;">实现难度</th>
+<th style="text-align: left;">适用场景</th>
+<th style="text-align: left;">是否推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">固定长度分块</td>
+<td style="text-align: left;">★☆☆☆☆</td>
+<td style="text-align: left;">★☆☆☆☆</td>
+<td style="text-align: left;">纯文本预处理</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">递归字符分块</td>
+<td style="text-align: left;">★★★☆☆</td>
+<td style="text-align: left;">★☆☆☆☆</td>
+<td style="text-align: left;">通用文本（推荐起点）</td>
+<td style="text-align: left;">✅✅✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">句子分块</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">★★☆☆☆</td>
+<td style="text-align: left;">法律、新闻等</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">结构化分块</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">★★☆☆☆</td>
+<td style="text-align: left;">Mrakdown/HTML文档</td>
+<td style="text-align: left;">✅✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">对话分块</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">★☆☆☆☆</td>
+<td style="text-align: left;">客服、会议记录</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">语义分块</td>
+<td style="text-align: left;">★★★★★</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">高精度知识库</td>
+<td style="text-align: left;">✅（进阶）</td>
+</tr>
+<tr>
+<td style="text-align: left;">主题分块（LDA）</td>
+<td style="text-align: left;">★★★☆☆</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">多主题长文</td>
+<td style="text-align: left;">⚠️（实验性）</td>
+</tr>
+<tr>
+<td style="text-align: left;">小-大分块</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">★★★☆☆</td>
+<td style="text-align: left;">复杂问答系统</td>
+<td style="text-align: left;">✅✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">代理式分块</td>
+<td style="text-align: left;">★★★★★</td>
+<td style="text-align: left;">★★★★★</td>
+<td style="text-align: left;">高价值知识建模</td>
+<td style="text-align: left;">🔬（研究向）</td>
+</tr>
+<tr>
+<td style="text-align: left;">混合分块</td>
+<td style="text-align: left;">★★★★☆</td>
+<td style="text-align: left;">★★★☆☆</td>
+<td style="text-align: left;">复杂文档</td>
+<td style="text-align: left;">✅✅✅（生产推荐）</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4_1">4. 结论：分块是实践，而非理论</h1>
+<h2 id="_5">核心认知</h2>
+<ol>
+<li>没有银弹
+   没有任何一种方法适用于所有场景，必须根据数据特征、业务需求持续迭代优化。</li>
+<li>始于简单，终于复合
+   从 <code>RecursiveCharacterTextSplitter</code> 建立基线，逐步引入结构化、语义化、混合策略，是最稳健的路径。</li>
+<li>分块即建模
+   你怎么切文档，就等于你怎么理解知识，高质量的分块本身就是一种语义增强与结构化的过程。<blockquote>
+<p>🌟最终建议
+把分块当成一个可度量、可实验、可优化的工程模块，结合评估指标（如检索命中率、答案准确率）进行A/B实验，才能真正发挥其价值</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<p>📌 附录：实用建议清单
+- ✅ 优先实用 <code>RecursiveCharacterTextSplitter</code> 作为基准。
+- ✅ 处理中文时注意分句工具的选择（避免直接使用英文Punkt）
+- ✅ 合理设值 <code>chunk_overlap</code> （建议10%-20%）
+- ✅ 对长文档尝试混合策略
+- ✅ 语义分块需调整，建议从 <code>percentile=70</code> 开始
+- ✅ 小-大分块适合高要求问答系统
+- ✅ 代理式分块尚处于实验阶段，谨慎用于生产</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
