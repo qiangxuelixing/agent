@@ -1,4 +1,4 @@
-site_name: 我的技术文档中心
+site_name: Agent
 theme:
   name: material  # 使用最流行的 Material 主题
   language: zh    # 设置为中文
@@ -9,4 +9,4 @@ theme:
 nav:
   - 首页: index.md
   - Rag: 
-    - 文档切分: docs/rag/chunk.md
+    - 文档切分: rag/chunk.md
